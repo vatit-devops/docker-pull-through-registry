@@ -1,0 +1,15 @@
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  namespace: kube-system
+  name: docker-stateful-claim-1
+  annotations:
+    volume.beta.kubernetes.io/storage-class: "docker-eu-west-1a"
+  labels:
+    app: registry
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 100Gi
